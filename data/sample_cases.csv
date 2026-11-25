@@ -1,0 +1,22 @@
+scenario,text,expected_spam,expected_hate,notes
+ordinary_personal,"Hey, are we still meeting at 6 pm near the station?",ham,non-hate,Ordinary personal message
+ordinary_work,"Please review the attached project report before tomorrow's meeting.",ham,non-hate,Ordinary workplace message
+legitimate_alert,"Your electricity bill is ready. Sign in through the official app to view it.",ham,non-hate,Legitimate-style service notification; verify sender in real life
+obvious_spam,"URGENT! Congratulations, you won a FREE prize. Click here to claim now: https://example.com",spam,non-hate,Promotional urgency and link pattern
+financial_scam,"Your bank account will be blocked today. Verify your password and OTP at http://example.invalid",spam,non-hate,Credential and OTP request; never share OTPs
+lottery_spam,"You have been selected for a cash reward. Call now to receive your prize.",spam,non-hate,Unsolicited prize claim language
+suspicious_link,"A delivery issue was found. Track your parcel at https://short.example/track",review,non-hate,Link may be legitimate or malicious; inspect sender and domain
+marketing_optin,"Sale starts tomorrow. Get 20 percent off in our store this weekend.",review,non-hate,Marketing is not automatically malicious spam
+identity_neutral,"The conference included speakers from India, Kenya, and Brazil.",ham,non-hate,Identity or nationality mention without attack
+identity_hate,"People from that country are all criminals and should be driven out.",ham,hate,Group-directed hostile generalization
+protected_group_hate,"I hate all immigrants and they should be forced out.",ham,hate,Hostility directed at a group
+counter_speech,"The post calls immigrants criminals, but that stereotype is hateful and wrong.",ham,non-hate,Quoted harmful language with explicit rejection
+quoted_news,"The article reports that a politician used a hateful slogan during the rally.",ham,non-hate,Reporting or discussing hate rather than endorsing it
+profanity_not_hate,"This software update is stupid and frustrating.",ham,non-hate,Profanity or insult not necessarily hate speech
+criticism_not_hate,"I strongly disagree with the minister's economic policy.",ham,non-hate,Criticism of an idea or public policy
+sarcasm,"Great job breaking the whole system again. Absolutely brilliant.",ham,non-hate,Sarcasm and personal criticism
+ambiguous_context,"They do not belong here.",ham,review,Target is unclear without preceding conversation
+ambiguous_slang,"That group is ruining everything, you know what I mean.",ham,review,Implicit target and context are unclear
+long_context,"I received a suspicious text yesterday, ignored its link, and reported it to the service provider.",ham,non-hate,Longer narrative mentioning spam-related terms
+non_english,"ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಪರಿಶೀಲಿಸಲು ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ",review,review,Non-English text; models are trained primarily on English
+empty_like,"   ",invalid,invalid,UI should reject empty strings before inference

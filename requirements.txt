@@ -1,0 +1,10 @@
+# Python 3.10-3.12 recommended. Install PyTorch for your OS from https://pytorch.org/get-started/locally/ if needed.
+streamlit>=1.39,<2
+pandas>=2.2,<4
+numpy>=1.26,<3
+scikit-learn>=1.5,<2
+matplotlib>=3.8,<4
+torch>=2.3
+transformers>=4.46,<5
+datasets>=3.0,<5
+accelerate>=1.0
